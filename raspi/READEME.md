@@ -20,6 +20,8 @@ ASUSTek Computer, Inc. WL-167G v3 802.11n Adapter [Realtek RTL8188SU]
 
 #### Installation
 
+https://www.elektronik-kompendium.de/sites/raspberry-pi/2002171.htm
+
 Das Netzwerk wird für Interface <code>wlan1</code> eingerichtet:
 
 DHCP Server und Wireless Access Point:
