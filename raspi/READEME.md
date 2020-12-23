@@ -20,6 +20,37 @@ ASUSTek Computer, Inc. WL-167G v3 802.11n Adapter [Realtek RTL8188SU]
 
 #### Installation
 
+Das Netzwerk wird für Interface <code>wlan1</code> eingerichtet:
+
+DHCP Server und Wireless Access Point:
+<code>sudo apt-get install hostapd</code>
+
+
+<code>sudo apt-get install dnsmasq</code>
+
+
+<code>sudo systemctl stop hostapd</code>
+
+
+<code>sudo systemctl stop dnsmasq</code>
+
+Beides konfigurieren, wie in den Dateien
+
+<code>sudo systemctl restart dnsmasq</code>
+
+<code>sudo systemctl enable dnsmasq</code>
+
+
+<code></code>
+
+<code></code>
+
+<code></code>
+
+<code></code>
+
+<code></code>
+
 
 
 ## DynDNS
