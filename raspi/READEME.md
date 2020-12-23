@@ -12,6 +12,16 @@ Um das interne WLAN Modul für Eduroam zu starten, den folgenden Befehl ausführ
 sudo wpa_supplicant -D wext -i wlan0 -c /etc/wpa_supplicant/eduroam.conf
 </code>
 
+### HtwMobileLab
+
+Für das Sensornetzwerk im Mobile Lab wird ein weiteres WLAN eingerichtet. Dafür wird ein externer WLAN Stick Raspberry Pi eingerichtet.
+
+ASUSTek Computer, Inc. WL-167G v3 802.11n Adapter [Realtek RTL8188SU]
+
+#### Installation
+
+
+
 ## DynDNS
 
 Als DynDNS Dienst wird https://dynv6.com eingesetzt. Der Raspi aktualisiert seine DynDNS-Adresse automatisch mit Hilfe von https://ddclient.net/ , wenn sich auf der Schnittstelle <code>wlan0</code> die IP-Adresse ändert.
