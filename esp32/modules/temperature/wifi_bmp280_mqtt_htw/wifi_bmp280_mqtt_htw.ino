@@ -95,6 +95,22 @@ void connect_MQTT(){
 
 }
 
+float getTemperature(){
+  float temperature = bmp.readTemperature();
+  while(temperature > 84 || temperature < -39){
+    temperature = bmp.readTemperature();
+  }
+  return temperature;
+}
+
+
+float getPressure(){
+  float pressure = bmp.readPressure();
+  while(pressure > 1099 || pressure < -299){
+    pressure = bmp.readPressure();
+  }
+  return pressure;
+}
 
 void setup() {
   Serial.begin(115200);
@@ -126,8 +142,8 @@ void loop() {
     connect_MQTT();
     Serial.setTimeout(2000);
 
-    float temperature = bmp.readTemperature();
-    float pressure = bmp.readPressure();
+    float temperature = getTemperature();
+    float pressure = getPressure();
       
     Serial.print(F("Temperature = "));
     Serial.print(temperature);
