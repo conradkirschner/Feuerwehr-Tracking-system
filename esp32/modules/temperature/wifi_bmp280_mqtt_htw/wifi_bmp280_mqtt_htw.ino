@@ -21,23 +21,24 @@
 #include <WiFi.h>
 #include "PubSubClient.h" // Connect and publish to the MQTT broker
 
-
-
 #define BMP_SCK  (13)
 #define BMP_MISO (12)
 #define BMP_MOSI (11)
 #define BMP_CS   (10)
 
+// PLEASE CONFIG!
+
+// Wifi
 const char* ssid = "SSID"; //SSID of the Wifi
 const char* password =  "PASSWORD"; //Password of the Wifi
-
 // MQTT
+String clientID = "CLIENT_ID"; // IMPORTANT! MQTT client ID
 const char* mqtt_server = "XXX.XXX.XXX.XXX";  // IP of the MQTT broker
-const char* pressure_topic = "home/office/pressure";
-const char* temperature_topic = "home/office/temperature";
-const char* mqtt_username = "MQTT_USERNAME"; // MQTT username
+const char* mqtt_username = "MQTT_USER"; // MQTT username
 const char* mqtt_password = "MQTT_PASSWORD"; // MQTT password
-const char* clientID = "NAME_OF_THE_CLIENT"; // MQTT client ID
+// other
+String pressure_topic = "home/" + clientID + "/pressure"; // MQTT topic
+String temperature_topic = "home/" + clientID + "/temperature"; // MQTT topic
 
 // Initialise the WiFi and MQTT Client objects
 WiFiClient wifiClient;
@@ -68,6 +69,7 @@ Adafruit_BMP280 bmp; // I2C
 
 void connectToNetwork() {
   WiFi.begin(ssid, password);
+  WiFi.setHostname(clientID.c_str());
  
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
@@ -78,6 +80,17 @@ void connectToNetwork() {
  
 }
 
+void disconnectToNetwork() {
+ 
+  while (WiFi.status() == WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Disestablish WiFi connection ..");
+    WiFi.disconnect(true);
+  }
+  
+  Serial.println("Disonnected from network");
+}
+
 void connect_MQTT(){
   
   Serial.print("IP address: ");
@@ -86,7 +99,7 @@ void connect_MQTT(){
   // Connect to MQTT Broker
   // client.connect returns a boolean value to let us know if the connection was successful.
   // If the connection is failing, make sure you are using the correct MQTT Username and Password (Setup Earlier in the Instructable)
-  if (client.connect(clientID, mqtt_username, mqtt_password)) {
+  if (client.connect(clientID.c_str(), mqtt_username, mqtt_password)) {
     Serial.println("Connected to MQTT Broker!");
   }
   else {
@@ -106,7 +119,7 @@ float getTemperature(){
 
 float getPressure(){
   float pressure = bmp.readPressure();
-  while(pressure > 1099 || pressure < -299){
+  while(pressure > 199999 || pressure < 1){
     pressure = bmp.readPressure();
   }
   return pressure;
@@ -123,7 +136,6 @@ void setup() {
     Serial.println(F("Could not find a valid BMP280 sensor, check wiring!"));
     while (1);
   }
-   connectToNetwork();
  
   Serial.println(WiFi.macAddress());
   Serial.println(WiFi.localIP());
@@ -138,7 +150,9 @@ void setup() {
 }
 
 void loop() {
-
+    
+    connectToNetwork();
+    Serial.setTimeout(2000);
     connect_MQTT();
     Serial.setTimeout(2000);
 
@@ -163,31 +177,32 @@ void loop() {
 
     Serial.println();
     // PUBLISH to the MQTT Broker (topic = Temperature, defined at the beginning)
-    if (client.publish(temperature_topic, String(temperature_s).c_str())) {
+    if (client.publish(temperature_topic.c_str(), String(temperature_s).c_str())) {
       Serial.println("Temperature sent!");
     }
     // Again, client.publish will return a boolean value depending on whether it succeeded or not.
     // If the message failed to send, we will try again, as the connection may have broken.
     else {
       Serial.println("Temperature failed to send. Reconnecting to MQTT Broker and trying again");
-      client.connect(clientID, mqtt_username, mqtt_password);
+      client.connect(clientID.c_str(), mqtt_username, mqtt_password);
       delay(10); // This delay ensures that client.publish doesn't clash with the client.connect call
-      client.publish(temperature_topic, String(temperature_s).c_str());
+      client.publish(temperature_topic.c_str(), String(temperature_s).c_str());
     }
 
     // PUBLISH to the MQTT Broker (topic = Pressure, defined at the beginning)
-    if (client.publish(pressure_topic, String(pressure_s).c_str())) {
+    if (client.publish(pressure_topic.c_str(), String(pressure_s).c_str())) {
       Serial.println("Pressure sent!");
     }
     // Again, client.publish will return a boolean value depending on whether it succeeded or not.
     // If the message failed to send, we will try again, as the connection may have broken.
     else {
       Serial.println("Pressure failed to send. Reconnecting to MQTT Broker and trying again");
-      client.connect(clientID, mqtt_username, mqtt_password);
+      client.connect(clientID.c_str(), mqtt_username, mqtt_password);
       delay(10); // This delay ensures that client.publish doesn't clash with the client.connect call
-      client.publish(pressure_topic, String(pressure_s).c_str());
+      client.publish(pressure_topic.c_str(), String(pressure_s).c_str());
     }
 
     client.disconnect();  // disconnect from the MQTT broker
+    disconnectToNetwork();  //disconnect from WiFi
     delay(1000*60);       // print new values every 1 Minute
 }
