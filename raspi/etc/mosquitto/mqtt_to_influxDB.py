@@ -1,3 +1,4 @@
+import time
 import re
 from typing import NamedTuple
 
@@ -79,5 +80,7 @@ def main():
 
 
 if __name__ == '__main__':
-    print('MQTT to InfluxDB')
+    print('MQTT to InfluxDB started ...')
+    print('Sleeps for 60 seconds ...')
+    time.sleep(60)
     main()
