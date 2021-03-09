@@ -67,13 +67,24 @@ Adafruit_BMP280 bmp; // I2C
 //Adafruit_BMP280 bmp(BMP_CS); // hardware SPI
 //Adafruit_BMP280 bmp(BMP_CS, BMP_MOSI, BMP_MISO,  BMP_SCK);
 
+void restartEsp() {
+  Serial.println("Restarting in 5 seconds");
+  delay(5000);
+  ESP.restart();  
+}
+
 void connectToNetwork() {
   WiFi.begin(ssid, password);
   WiFi.setHostname(clientID.c_str());
  
+  int i = 0;
   while (WiFi.status() != WL_CONNECTED) {
+    if(i >= 100) {
+      restartEsp();
+    }
     delay(1000);
     Serial.println("Establishing connection to WiFi..");
+    i++;
   }
  
   Serial.println("Connected to network");
@@ -82,10 +93,15 @@ void connectToNetwork() {
 
 void disconnectToNetwork() {
  
+  int i = 0;
   while (WiFi.status() == WL_CONNECTED) {
+    if(i >= 100) {
+      restartEsp();
+    }
     delay(1000);
     Serial.println("Disestablish WiFi connection ..");
     WiFi.disconnect(true);
+    i++;
   }
   
   Serial.println("Disonnected from network");
