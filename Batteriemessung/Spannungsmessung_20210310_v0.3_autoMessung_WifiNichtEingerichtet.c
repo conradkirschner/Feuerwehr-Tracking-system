@@ -12,13 +12,13 @@ const int fehlerZeit = 5000;  /* Wartezeit wenn ein Fehler entdeckt wurde*/
 int restartCounter = 10;      /* Anzahl an Sendungen, die einen neustart des ESP ausführen*/
 
 /*WIFI-Configuration*/
-const char* ssid = "HtwMobileLab"; //SSID of the Wifi
-const char* password =  "VnhO69uLVH40cE8G"; //Password of the Wifi
+const char* ssid = ""; //SSID of the Wifi
+const char* password =  ""; //Password of the Wifi
 // MQTT
 String clientID = "Batterie"; // IMPORTANT! MQTT client ID -> Name der Batteriemessung
 const char* mqtt_server = "192.168.0.1";  // IP of the MQTT broker
-const char* mqtt_username = "htw-mobile-lab"; // MQTT username
-const char* mqtt_password = "1G0z6YCLZ3WRNBF5"; // MQTT password
+const char* mqtt_username = ""; // MQTT username
+const char* mqtt_password = ""; // MQTT password
 // other
 String voltage_topic = "home/" + clientID + "/voltage"; // MQTT topic
 // Initialise the WiFi and MQTT Client objects
