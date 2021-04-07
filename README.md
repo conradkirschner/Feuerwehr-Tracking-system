@@ -209,7 +209,7 @@ https://grafana.com/tutorials/install-grafana-on-raspberry-pi/
 ### Batteriemessung
 <object data="https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/Dokumentation%20f%C3%BCr%20Batteriemessung.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/Dokumentation%20f%C3%BCr%20Batteriemessung.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/Dokumentation%20f%C3%BCr%20Batteriemessung.pdf">Download PDF</a>.</p>
+        <p>Dieser Browser unterstützt keine PDFs. Bitte laden Sie das PDF herunter, um es zu betrachten: <a href="https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/Dokumentation%20f%C3%BCr%20Batteriemessung.pdf">PDF ansehen</a>.</p>
     </embed>
 </object>
 
