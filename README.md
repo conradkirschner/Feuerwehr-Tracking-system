@@ -212,8 +212,8 @@ https://grafana.com/tutorials/install-grafana-on-raspberry-pi/
 ### Eduroam
 <a name="FAQ"></a>
 ## FAQ
-1. WiFi is not working / System Stopped
+### 1. WiFi is not working / System Stopped
    - do restart, remove power for 5 sec!
-3. 
+### 3. 
 <a name="Fazit"></a>
 ## Fazit
