@@ -212,7 +212,6 @@ https://grafana.com/tutorials/install-grafana-on-raspberry-pi/
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/Dokumentation%20f%C3%BCr%20Batteriemessung.pdf">Download PDF</a>.</p>
     </embed>
 </object>
-![Image Title](https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/Dokumentation%20f%C3%BCr%20Batteriemessung.pdf){width=65%}
 
 ### ESP32
 <a name="eudoram"></a>
