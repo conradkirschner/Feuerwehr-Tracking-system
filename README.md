@@ -10,7 +10,7 @@
 <a name="einleitung"></a>
 ## Einleitung
 
-![alt text](https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/feuerwehrauto.png "Logo Title Text 1")
+![alt text](https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/feuerwehrauto.png "Logo Title Text 1")
 
 <a name="hauptteil"></a>
 ## Hauptteil
@@ -206,6 +206,8 @@ https://grafana.com/tutorials/install-grafana-on-raspberry-pi/
 
 <code>sudo apt-get install -y grafana</code>
 
+### Batteriemessung
+![Image Title](https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/feuerwehrauto.pdf){width=65%}
 
 ### ESP32
 <a name="eudoram"></a>
