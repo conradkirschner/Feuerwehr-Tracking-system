@@ -214,6 +214,7 @@ https://grafana.com/tutorials/install-grafana-on-raspberry-pi/
 ## FAQ
 ### 1. WiFi is not working / System Stopped
    - do restart, remove power for 5 sec!
-### 3. 
+### 2. ESP Debugging Tipp
+   - Ein Sensor ist am Pi per USB angeschlossen um den seriellen Output im Fehlerfall mitlesen zu können. Das Skript kann erst ausgeführt werden, wenn der Sensor per USB am Pi (also wenn das Gerät /dev/ttyUSB0) verfügbar ist. *screen* schreibt dann die Ausgabe im Hintergrund in das Log.
 <a name="Fazit"></a>
 ## Fazit
