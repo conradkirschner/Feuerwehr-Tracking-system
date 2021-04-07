@@ -17,10 +17,8 @@
 <a name="raspberry"></a>
 ### Raspberry Pi einrichten
 <a name="ESP32"></a>
-# Raspi config
-
-## Wifi
-### Eduroam
+#### Wifi
+#### Eduroam
 
 Für den Betrieb im Eduroam wird das aktuelle Root-Zertifikat benötigt. Dieses findet man unter https://rz.htw-berlin.de/anleitungen/wlan-wi-fi/
 Des Weiteren wird eine passende Konfiguration für WPA Supplicant erstellt werden.
@@ -31,7 +29,7 @@ Um das interne WLAN Modul für Eduroam zu starten, den folgenden Befehl ausführ
 sudo wpa_supplicant -D wext -i wlan0 -c /etc/wpa_supplicant/eduroam.conf
 </code>
 
-### HtwMobileLab
+#### HtwMobileLab
 
 Für das Sensornetzwerk im Mobile Lab wird ein weiteres WLAN eingerichtet. Dafür wird ein externer WLAN Stick Raspberry Pi eingerichtet.
 
@@ -107,21 +105,21 @@ Log & Debug:
 
 
 
-## DynDNS
+#### DynDNS
 
 Als DynDNS Dienst wird https://dynv6.com eingesetzt. Der Raspi aktualisiert seine DynDNS-Adresse automatisch mit Hilfe von https://ddclient.net/ , wenn sich auf der Schnittstelle <code>wlan0</code> die IP-Adresse ändert.
 
-### Installation
+##### Installation
 
 <code>sudo apt install ddclient</code>
 
-### Konfiguration
+##### Konfiguration
 
 <code>/etc/ddclient.conf</code>
 
 <code>systemctl restart ddclient</code>
 
-### Log
+##### Log
 
 <code>tail -f /var/log/daemon.log</code>
 
