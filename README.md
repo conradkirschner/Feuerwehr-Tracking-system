@@ -220,7 +220,7 @@ https://grafana.com/tutorials/install-grafana-on-raspberry-pi/
   ```
 
     Interface:	/dev/ttyUSB0  
-    Skript:		/home/pi/usb_serial_output.sh  
-    Log:			tail -f /home/pi/usb_serial_output.log
+    Skript:	/home/pi/usb_serial_output.sh  
+    Log:	tail -f /home/pi/usb_serial_output.log
 ```
 ## Fazit
