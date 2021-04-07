@@ -9,7 +9,19 @@
 - [Fazit](#Fazit)
 <a name="einleitung"></a>
 ## Einleitung
-
+### Einkaufsliste
+- Raspberry Pi 3b
+- SD Karte
+- 5x ESP32
+- Kabel
+- 4x BMP280
+- 100000 Ohm Wiederstand
+- 10000 Ohm Wiederstand
+- 1000 Ohm Wiederstand
+- 2 Diode
+- Lötbrett
+- Lötkobeln
+- [50V Electrolyt Kondensator](https://www.conrad.de/de/p/yageo-s5050m1r00b1f-0405-elektrolyt-kondensator-radial-bedrahtet-1-5-mm-1-f-50-v-20-x-h-4-mm-x-5-mm-1-st-445724.html)
 ![alt text](https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/feuerwehrauto.png "Logo Title Text 1")
 
 <a name="hauptteil"></a>
