@@ -17,9 +17,9 @@
 <a name="raspberry"></a>
 ### Raspberry Pi einrichten
 <a name="ESP32"></a>
-## ESP32
+### ESP32
 <a name="eudoram"></a>
-## Eduroam
+### Eduroam
 <a name="FAQ"></a>
 ## FAQ
 <a name="Fazit"></a>
