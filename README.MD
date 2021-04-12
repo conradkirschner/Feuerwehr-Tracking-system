@@ -1,12 +1,19 @@
 # Feuerwehr-Tracking-system
+- [Beteiligte](#students)
 - [Einleitung](#einleitung)
 - [Hauptteil](#hauptteil)
 	- [Raspberry Pi einrichten](#raspberry)
 	- [ESP32](#ESP32)
-	- [Eduroam](#eudoram)	
-	- [FAQ](#FAQ)	
+	- [Eduroam](#eudoram)
 
 - [Fazit](#Fazit)
+<a name="students"></a>
+## Beteiligte
+- Conrad Magnus Kirschner 566895
+- Mark Morgen 561077
+- Marco Heger 563424
+- Philipp Schach
+
 <a name="einleitung"></a>
 ## Einleitung
 
@@ -16,8 +23,6 @@
 ## Hauptteil
 <a name="raspberry"></a>
 ### Raspberry Pi einrichten
-<a name="ESP32"></a>
-#### Wifi
 #### Eduroam
 
 Für den Betrieb im Eduroam wird das aktuelle Root-Zertifikat benötigt. Dieses findet man unter https://rz.htw-berlin.de/anleitungen/wlan-wi-fi/
@@ -209,23 +214,26 @@ https://grafana.com/tutorials/install-grafana-on-raspberry-pi/
 ### Batteriemessung
 <object data="https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/Dokumentation%20f%C3%BCr%20Batteriemessung.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/Dokumentation%20f%C3%BCr%20Batteriemessung.pdf">
-        <p>Dieser Browser unterstützt keine PDFs. Bitte laden Sie das PDF herunter, um es zu betrachten: <a href="https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/Dokumentation%20f%C3%BCr%20Batteriemessung.pdf">PDF ansehen</a>.</p>
+        <p>Siehe Anhang:  <a href="https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/Dokumentation%20f%C3%BCr%20Batteriemessung.pdf">Batteriemessung</a>.</p>
     </embed>
 </object>
 
 ### ESP32
-<a name="eudoram"></a>
+<a name="ESP32"></a>  
+ESP Verbinden und Source Code Flashen z.B. mit WebIDE  
+[https://www.espruino.com/ide/](https://www.espruino.com/ide/)  
+
+Sourcecodes: 
+
 ### Eduroam
 <a name="FAQ"></a>
 ## FAQ
-### 1. WiFi is not working / System Stopped
-   - do restart, remove power for 5 sec!
+### 1. WiFi funktioniert nicht mehr 
+   - Neustarten, Strom trennen für 5 Sekunden
 ### 2. ESP Debugging Tipp
    - Ein Sensor ist am Pi per USB angeschlossen um den seriellen Output im Fehlerfall mitlesen zu können. Das Skript kann erst ausgeführt werden, wenn der Sensor per USB am Pi (also wenn das Gerät /dev/ttyUSB0) verfügbar ist. *screen* schreibt dann die Ausgabe im Hintergrund in das Log.
-<a name="Fazit"></a>  
   ```
     Interface:	/dev/ttyUSB0  
     Skript:	/home/pi/usb_serial_output.sh  
     Log:	tail -f /home/pi/usb_serial_output.log
-```
-## Fazit
+``
