@@ -223,6 +223,16 @@ https://grafana.com/tutorials/install-grafana-on-raspberry-pi/
 
 <code>sudo apt-get install -y grafana</code>
 
+### ESP32
+<a name="ESP32"></a>  
+ESP Verbinden und Source Code Flashen z.B. mit WebIDE  
+[https://www.espruino.com/ide/](https://www.espruino.com/ide/)
+
+Sourcecodes:
+[Batteriemessung](./esp32/modules/batteriemessung/batterymessure.c)
+[Temperature](./esp32/modules/batteriemessung/batterymessure.c)
+
+
 ### Batteriemessung
 <object data="https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/Dokumentation%20f%C3%BCr%20Batteriemessung.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/Dokumentation%20f%C3%BCr%20Batteriemessung.pdf">
@@ -230,14 +240,6 @@ https://grafana.com/tutorials/install-grafana-on-raspberry-pi/
     </embed>
 </object>
 
-### ESP32
-<a name="ESP32"></a>  
-ESP Verbinden und Source Code Flashen z.B. mit WebIDE  
-[https://www.espruino.com/ide/](https://www.espruino.com/ide/)  
-
-Sourcecodes:
-[Batteriemessung](./esp32/modules/batteriemessung/batterymessure.c)
-[Temperature](./esp32/modules/batteriemessung/batterymessure.c)
 
 <a name="FAQ"></a>
 ## FAQ
