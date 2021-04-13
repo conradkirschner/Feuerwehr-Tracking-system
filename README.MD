@@ -5,8 +5,8 @@
 	- [Raspberry Pi einrichten](#raspberry)
 	- [ESP32](#ESP32)
 	- [Eduroam](#eudoram)
-
-- [Fazit](#Fazit)
+- [Backup](#Backup)
+- [FAQ](#FAQ)
 <a name="students"></a>
 ## Beteiligte
 - Conrad Magnus Kirschner 566895
@@ -239,6 +239,16 @@ Sourcecodes:
         <p>Siehe Anhang:  <a href="https://github.com/conradkirschner/Feuerwehr-Tracking-system/blob/main/docs/Dokumentation%20f%C3%BCr%20Batteriemessung.pdf">Batteriemessung</a>.</p>
     </embed>
 </object>
+
+
+<a name="Backup"></a>
+## Backup
+Erstelle ein Image von der SD-Karte des PIs.
+[Anleitung für verschiedene Betriebsysteme](https://raspberrytips.com/create-image-sd-card/)
+
+### Restore/Wiederherstellen
+Der Link vom Backup enthält alle Informationen um ein Image wieder herzustellen. 
+[Anleitung für verschiedene Betriebsysteme](https://raspberrytips.com/create-image-sd-card/)
 
 
 <a name="FAQ"></a>
