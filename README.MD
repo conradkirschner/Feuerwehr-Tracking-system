@@ -249,7 +249,7 @@ Erstelle ein Image von der SD-Karte des PIs.
 ### Restore/Wiederherstellen
 Der Link vom Backup enthält alle Informationen um ein Image wieder herzustellen. 
 [Anleitung für verschiedene Betriebsysteme](https://raspberrytips.com/create-image-sd-card/)
-
+Das Aktuelle Image findest du im Ordner /image im Repository.
 
 <a name="FAQ"></a>
 ## FAQ
