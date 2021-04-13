@@ -257,8 +257,16 @@ Der Link vom Backup enthält alle Informationen um ein Image wieder herzustellen
    - Neustarten, Strom trennen für 5 Sekunden
 ### 2. ESP Debugging Tipp
    - Ein Sensor ist am Pi per USB angeschlossen um den seriellen Output im Fehlerfall mitlesen zu können. Das Skript kann erst ausgeführt werden, wenn der Sensor per USB am Pi (also wenn das Gerät /dev/ttyUSB0) verfügbar ist. *screen* schreibt dann die Ausgabe im Hintergrund in das Log.
-  ```
+  ``
     Interface:	/dev/ttyUSB0  
     Skript:	/home/pi/usb_serial_output.sh  
-    Log:	tail -f /home/pi/usb_serial_output.log
-``
+    Log:	tail -f /home/pi/usb_serial_output.log``
+### Wo kaufe ich am besten ein?
+Als lokalen Laden empfehlen wir [https://www.conrad.de/](https://www.conrad.de/).
+Preisgünstiger kann es werden, wenn du direkt aus China bestellst. [https://aliexpress.com/]( https://aliexpress.com/).
+
+Für größere Projekte empfehlen wir dir immer die Kontaktaufnahme mit den Herstellern. 
+https://www.espressif.com/en/contact-us/get-samples
+
+Alternativ kannst du im B2B-Marktplatz auf Alibaba nachschauen, je nachdem was noch benötigt wird.
+
